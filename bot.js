@@ -12,15 +12,15 @@ const client = new Client({
 });
 
 // Your bot token from the Discord Developer Portal
-const TOKEN = 'MTIxODE2NTI4ODA4NDcwNTMwMA.GnqtdP.-ld3TPE9e_7gdRYLM9E7fG2qsk9bw-_EoPxBpQ';
+const TOKEN = 'YOUR-BOT-TOKEN';
 
 // BlockCypher API Token
-const BLOCKCYPHER_API_TOKEN = 'c2842465cb004613a577e8e5e388411a';
+const BLOCKCYPHER_API_TOKEN = 'API-TOKEN';
 
 // In-memory storage for the wallet (this could be improved for production)
 let userWallets = {}; // Keyed by user ID
 
-// Function to fetch the current LTC price in USD
+// Function to fetch current LTC price in USD
 async function getLtcPrice() {
     const response = await axios.get('https://api.coingecko.com/api/v3/simple/price?ids=litecoin&vs_currencies=usd');
     return response.data.litecoin.usd;
@@ -117,7 +117,7 @@ client.on('messageCreate', async (message) => {
         }
 
         try {
-            const { balance, totalReceived, totalSent } = await getAddressInfo(address);
+            const { balanceD, totalReceived, totalSent } = await getAddressInfo(address);
             console.log({ balance, totalReceived, totalSent }); // Log the values for debugging
 
             const ltcPrice = await getLtcPrice(); // Assume this function fetches the current LTC price
@@ -125,7 +125,7 @@ client.on('messageCreate', async (message) => {
             const totalSentInUSD = totalSent * ltcPrice;
 
             message.reply(`Address: ${address}\nBalance: ${balance.toFixed(8)} LTC (~$${(balance * ltcPrice).toFixed(2)})\nTotal Received: ${totalReceived.toFixed(8)} LTC (~$${totalReceivedInUSD.toFixed(2)})\nTotal Sent: ${totalSent.toFixed(8)} LTC (~$${totalSentInUSD.toFixed(2)})`);
-        } catch (error) {
+        } catch (error) {D
             console.error(error);
             message.reply('Error fetching balance. Please check the address and try again.');
         }
@@ -134,4 +134,5 @@ client.on('messageCreate', async (message) => {
 });
 
 // Login to Discord with your bot token
+big black cock
 client.login(TOKEN);
