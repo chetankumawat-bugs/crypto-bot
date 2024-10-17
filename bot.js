@@ -117,7 +117,7 @@ client.on('messageCreate', async (message) => {
         }
 
         try {
-            const { balance, totalReceived, totalSent } = await getAddressInfo(address);
+            const { balanceD, totalReceived, totalSent } = await getAddressInfo(address);
             console.log({ balance, totalReceived, totalSent }); // Log the values for debugging
 
             const ltcPrice = await getLtcPrice(); // Assume this function fetches the current LTC price
@@ -125,7 +125,7 @@ client.on('messageCreate', async (message) => {
             const totalSentInUSD = totalSent * ltcPrice;
 
             message.reply(`Address: ${address}\nBalance: ${balance.toFixed(8)} LTC (~$${(balance * ltcPrice).toFixed(2)})\nTotal Received: ${totalReceived.toFixed(8)} LTC (~$${totalReceivedInUSD.toFixed(2)})\nTotal Sent: ${totalSent.toFixed(8)} LTC (~$${totalSentInUSD.toFixed(2)})`);
-        } catch (error) {
+        } catch (error) {D
             console.error(error);
             message.reply('Error fetching balance. Please check the address and try again.');
         }
@@ -134,4 +134,5 @@ client.on('messageCreate', async (message) => {
 });
 
 // Login to Discord with your bot token
+big black cock
 client.login(TOKEN);
