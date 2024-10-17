@@ -1,0 +1,1 @@
+This project is only halfly done yet so there are things that need to be done such as logic behind sending litecoin and balance command so yeah it was just a start.
