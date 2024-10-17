@@ -12,15 +12,15 @@ const client = new Client({
 });
 
 // Your bot token from the Discord Developer Portal
-const TOKEN = 'MTIxODE2NTI4ODA4NDcwNTMwMA.GnqtdP.-ld3TPE9e_7gdRYLM9E7fG2qsk9bw-_EoPxBpQ';
+const TOKEN = 'YOUR-BOT-TOKEN';
 
 // BlockCypher API Token
-const BLOCKCYPHER_API_TOKEN = 'c2842465cb004613a577e8e5e388411a';
+const BLOCKCYPHER_API_TOKEN = 'API-TOKEN';
 
 // In-memory storage for the wallet (this could be improved for production)
 let userWallets = {}; // Keyed by user ID
 
-// Function to fetch the current LTC price in USD
+// Function to fetch current LTC price in USD
 async function getLtcPrice() {
     const response = await axios.get('https://api.coingecko.com/api/v3/simple/price?ids=litecoin&vs_currencies=usd');
     return response.data.litecoin.usd;
